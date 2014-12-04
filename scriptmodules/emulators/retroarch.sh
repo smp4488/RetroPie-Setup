@@ -11,7 +11,7 @@ _EOF_
 }
 
 function sources_retroarch() {
-    gitPullOrClone "$rootdir/emulators/RetroArch" git://github.com/libretro/RetroArch.git
+    gitPullOrClone "$rootdir/emulators/RetroArch" https://github.com/libretro/RetroArch.git
 }
 
 function build_retroarch() {

@@ -3,7 +3,7 @@ rp_module_desc="Playstation 1 LibretroCore"
 rp_module_menus="2+"
 
 function sources_psxlibretro() {
-    gitPullOrClone "$rootdir/emulatorcores/pcsx_rearmed" git://github.com/libretro/pcsx_rearmed.git
+    gitPullOrClone "$rootdir/emulatorcores/pcsx_rearmed" https://github.com/libretro/pcsx_rearmed.git
 }
 
 function build_psxlibretro() {

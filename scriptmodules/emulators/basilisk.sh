@@ -7,7 +7,7 @@ function depends_basilisk() {
 }
 
 function sources_basilisk() {
-    gitPullOrClone "$rootdir/emulators/basiliskii" git://github.com/cebix/macemu.git
+    gitPullOrClone "$rootdir/emulators/basiliskii" https://github.com/cebix/macemu.git
 }
 
 function build_basilisk() {

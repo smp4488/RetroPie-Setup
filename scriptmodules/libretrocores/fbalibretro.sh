@@ -7,7 +7,7 @@ function depends_fbalibretro() {
 }
 
 function sources_fbalibretro() {
-    gitPullOrClone "$rootdir/emulatorcores/fba-libretro" git://github.com/libretro/fba-libretro.git
+    gitPullOrClone "$rootdir/emulatorcores/fba-libretro" https://github.com/libretro/fba-libretro.git
 }
 
 function build_fbalibretro() {
@@ -29,7 +29,7 @@ function build_fbalibretro() {
     dphys-swapfile swapoff
     echo "CONF_SWAPSIZE=99" > /etc/dphys-swapfile
     dphys-swapfile setup
-    dphys-swapfile swapon    
+    dphys-swapfile swapon
 }
 
 function configure_fbalibretro() {

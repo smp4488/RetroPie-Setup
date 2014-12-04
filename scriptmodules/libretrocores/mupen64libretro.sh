@@ -5,30 +5,30 @@ rp_module_menus="4+"
 function sources_mupen64plus() {
     rmDirExists "$rootdir/emulatorcores/mupen64plus"
     # Base repo:
-    # gitPullOrClone "$rootdir/emulatorcores/mupen64plus" git://github.com/libretro/mupen64plus-libretro.git
+    # gitPullOrClone "$rootdir/emulatorcores/mupen64plus" https://github.com/libretro/mupen64plus-libretro.git
     # Freezed fixed repo:
-    gitPullOrClone "$rootdir/emulatorcores/mupen64plus" git://github.com/gizmo98/mupen64plus-libretro.git
+    gitPullOrClone "$rootdir/emulatorcores/mupen64plus" https://github.com/gizmo98/mupen64plus-libretro.git
 }
 
 function build_mupen64plus() {
     pushd "$rootdir/emulatorcores/mupen64plus"
-    
+
     # Increase swapfile size to meet memory requirement
     # mupen64plus needs up to 310MB RAM during compilation
     dphys-swapfile swapoff
     echo "CONF_SWAPSIZE=300" > /etc/dphys-swapfile
     dphys-swapfile setup
     dphys-swapfile swapon
-    
+
     # Add missing path --> Fix already merged https://github.com/libretro/mupen64plus-libretro/commit/c035cf1c7a2514aeb14adf51ad825208ff1a068d
     # sed -i 's|GL_LIB := -lGLESv2|GL_LIB := -L/opt/vc/lib -lGLESv2|g' Makefile
     make clean
-    make platform=rpi 
+    make platform=rpi
     if [[ -z `find $rootdir/emulatorcores/mupen64plus/ -name "*libretro*.so"` ]]; then
         __ERRMSGS="$__ERRMSGS Could not successfully compile N64 core."
     fi
-    
-    # Set original swapfile size 
+
+    # Set original swapfile size
     dphys-swapfile swapoff
     echo "CONF_SWAPSIZE=100" > /etc/dphys-swapfile
     dphys-swapfile setup
@@ -49,7 +49,7 @@ function configure_mupen64plus() {
     # Copy config files
     cp $rootdir/emulatorcores/mupen64plus/mupen64plus/mupen64plus-core/data/mupen64plus.cht $home/RetroPie/BIOS/mupen64plus.cht
     cp $rootdir/emulatorcores/mupen64plus/mupen64plus/mupen64plus-core/data/mupencheat.txt $home/RetroPie/BIOS/mupencheat.txt
-    cp $rootdir/emulatorcores/mupen64plus/mupen64plus/mupen64plus-core/data/mupen64plus.ini $home/RetroPie/BIOS/mupen64plus.ini 
+    cp $rootdir/emulatorcores/mupen64plus/mupen64plus/mupen64plus-core/data/mupen64plus.ini $home/RetroPie/BIOS/mupen64plus.ini
     cp $rootdir/emulatorcores/mupen64plus/mupen64plus/mupen64plus-core/data/font.ttf $home/RetroPie/BIOS/font.ttf
 
     # Set permissions

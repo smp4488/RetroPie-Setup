@@ -4,7 +4,7 @@ rp_module_menus="2+"
 
 # install Game Boy Advance emulator gpSP
 function sources_gpsp() {
-    gitPullOrClone "$rootdir/emulators/gpsp" git://github.com/gizmo98/gpsp.git
+    gitPullOrClone "$rootdir/emulators/gpsp" https://github.com/gizmo98/gpsp.git
     pushd "$rootdir/emulators/gpsp"
     cd raspberrypi
 

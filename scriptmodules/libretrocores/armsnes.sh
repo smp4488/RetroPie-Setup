@@ -3,7 +3,7 @@ rp_module_desc="SNES LibretroCore ARMSNES"
 rp_module_menus="4+"
 
 function sources_armsnes() {
-    gitPullOrClone "$rootdir/emulatorcores/armsnes-libretro" git://github.com/rmaz/ARMSNES-libretro
+    gitPullOrClone "$rootdir/emulatorcores/armsnes-libretro" https://github.com/rmaz/ARMSNES-libretro
     pushd "$rootdir/emulatorcores/armsnes-libretro"
     patch -N -i $scriptdir/supplementary/pocketsnesmultip.patch $rootdir/emulatorcores/armsnes-libretro/src/ppu.cpp
     popd

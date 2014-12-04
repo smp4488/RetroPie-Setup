@@ -3,7 +3,7 @@ rp_module_desc="NES LibretroCore fceu-next"
 rp_module_menus="2+"
 
 function sources_neslibretro() {
-    gitPullOrClone "$rootdir/emulatorcores/fceu-next" git://github.com/libretro/fceu-next.git
+    gitPullOrClone "$rootdir/emulatorcores/fceu-next" https://github.com/libretro/fceu-next.git
 }
 
 function build_neslibretro() {

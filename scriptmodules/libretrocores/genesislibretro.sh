@@ -3,7 +3,7 @@ rp_module_desc="Genesis/Megadrive LibretroCore"
 rp_module_menus="2+"
 
 function sources_genesislibretro() {
-    gitPullOrClone "$rootdir/emulatorcores/Genesis-Plus-GX" git://github.com/libretro/Genesis-Plus-GX.git
+    gitPullOrClone "$rootdir/emulatorcores/Genesis-Plus-GX" https://github.com/libretro/Genesis-Plus-GX.git
 }
 
 function build_genesislibretro() {

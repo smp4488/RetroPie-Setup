@@ -3,7 +3,7 @@ rp_module_desc="Gameboy Color LibretroCore"
 rp_module_menus="2+"
 
 function sources_gbclibretro() {
-    gitPullOrClone "$rootdir/emulatorcores/gambatte-libretro" git://github.com/libretro/gambatte-libretro.git
+    gitPullOrClone "$rootdir/emulatorcores/gambatte-libretro" https://github.com/libretro/gambatte-libretro.git
 }
 
 function build_gbclibretro() {

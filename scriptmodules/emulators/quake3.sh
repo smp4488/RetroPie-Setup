@@ -8,7 +8,7 @@ function depends_quake3() {
 
 function sources_quake3() {
     rmDirExists "$rootdir/emulators/quake3src"
-    gitPullOrClone "$rootdir/emulators/quake3src" git://github.com/raspberrypi/quake3.git
+    gitPullOrClone "$rootdir/emulators/quake3src" https://github.com/raspberrypi/quake3.git
     mkdir -p "$rootdir/emulators"
     sed -i "s#/opt/bcm-rootfs##g" "$rootdir/emulators/quake3src/build.sh"
     sed -i "s/^CROSS_COMPILE/#CROSS_COMPILE/" "$rootdir/emulators/quake3src/build.sh"
@@ -37,7 +37,7 @@ function install_quake3() {
     rm "$rootdir/emulators/quake3/baseq3/Q3DemoPaks.zip"
 
     # Apply chmod to the files
-    chmod +x "$rootdir/emulators/quake3/"*.arm 
+    chmod +x "$rootdir/emulators/quake3/"*.arm
 
     popd
 }
@@ -56,5 +56,5 @@ _EOF_
 
     chmod +x "$romdir/ports/Quake III Arena.sh"
 
-    setESSystem 'Ports' 'ports' '~/RetroPie/roms/ports' '.sh .SH' '%ROM%' 'pc' 'ports'    
+    setESSystem 'Ports' 'ports' '~/RetroPie/roms/ports' '.sh .SH' '%ROM%' 'pc' 'ports'
 }

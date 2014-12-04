@@ -319,7 +319,7 @@ function setESSystem() {
 
     rps_checkNeededPackages python-lxml
 
-    gitPullOrClone "$rootdir/supplementary/ESConfigEdit" git://github.com/petrockblog/ESConfigEdit
+    gitPullOrClone "$rootdir/supplementary/ESConfigEdit" https://github.com/petrockblog/ESConfigEdit
 
     mkdir -p "/etc/emulationstation"
 

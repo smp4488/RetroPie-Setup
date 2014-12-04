@@ -24,10 +24,10 @@ Then you can download the latest RetroPie setup script with
 
 ```shell
 cd
-git clone --depth=0 git://github.com/petrockblog/RetroPie-Setup.git
+git clone --depth=0 https://github.com/petrockblog/RetroPie-Setup.git
 ```
 
-The script is executed with 
+The script is executed with
 
 ```shell
 cd RetroPie-Setup
@@ -35,15 +35,15 @@ chmod +x retropie_setup.sh
 sudo ./retropie_setup.sh
 ```
 
-Optional arguments can be passed to the script. If called with 
+Optional arguments can be passed to the script. If called with
 ```shell
 sudo ./retropie_setup.sh
 ```
-the installation directory is /home/CURRENTUSER/RetroPie for the current user, where CURRENTUSER is the home directory of the current user. If called with 
+the installation directory is /home/CURRENTUSER/RetroPie for the current user, where CURRENTUSER is the home directory of the current user. If called with
 ```shell
 sudo ./retropie_setup.sh USERNAME
 ```
-the installation directory is /home/USERNAME/RetroPie for user USERNAME. If called with 
+the installation directory is /home/USERNAME/RetroPie for user USERNAME. If called with
 ```shell
 sudo ./retropie_setup.sh USERNAME ABSPATH
 ```

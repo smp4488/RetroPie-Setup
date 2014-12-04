@@ -59,7 +59,7 @@ chown $user:$user "$romdir/esconfig/"*
 function install_esconfig()
 {
     rmDirExists "$rootdir/supplementary/ES-config"
-    gitPullOrClone "$rootdir/supplementary/ES-config" git://github.com/Aloshi/ES-config.git
+    gitPullOrClone "$rootdir/supplementary/ES-config" https://github.com/Aloshi/ES-config.git
     pushd "$rootdir/supplementary/ES-config"
     sed -i -e "s/apt-get install/apt-get install -y --force-yes/g" get_dependencies.sh
     ./get_dependencies.sh

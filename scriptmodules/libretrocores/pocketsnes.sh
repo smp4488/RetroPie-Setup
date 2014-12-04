@@ -3,7 +3,7 @@ rp_module_desc="SNES LibretroCore PocketSNES"
 rp_module_menus="2+"
 
 function sources_pocketsnes() {
-    gitPullOrClone "$rootdir/emulatorcores/pocketsnes-libretro" git://github.com/ToadKing/pocketsnes-libretro.git
+    gitPullOrClone "$rootdir/emulatorcores/pocketsnes-libretro" https://github.com/ToadKing/pocketsnes-libretro.git
     pushd "$rootdir/emulatorcores/pocketsnes-libretro"
     patch -N -i $scriptdir/supplementary/pocketsnesmultip.patch $rootdir/emulatorcores/pocketsnes-libretro/src/ppu.cpp
     popd

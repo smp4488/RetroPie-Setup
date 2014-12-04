@@ -3,7 +3,7 @@ rp_module_desc="Atari 2600 LibretroCore Stella"
 rp_module_menus="2+"
 
 function sources_stellalibretro() {
-    gitPullOrClone "$rootdir/emulatorcores/stella-libretro" git://github.com/libretro/stella-libretro.git
+    gitPullOrClone "$rootdir/emulatorcores/stella-libretro" https://github.com/libretro/stella-libretro.git
 }
 
 function build_stellalibretro() {

@@ -3,7 +3,7 @@ rp_module_desc="Doom LibretroCore"
 rp_module_menus="2+"
 
 function sources_doom() {
-    gitPullOrClone "$rootdir/emulatorcores/libretro-prboom" git://github.com/libretro/libretro-prboom.git
+    gitPullOrClone "$rootdir/emulatorcores/libretro-prboom" https://github.com/libretro/libretro-prboom.git
 }
 
 function build_doom() {
@@ -18,7 +18,7 @@ function build_doom() {
 
 function install_doom() {
     mkdir -p $romdir/ports/doom
-    cp $rootdir/emulatorcores/libretro-prboom/prboom.wad $romdir/ports/doom 
+    cp $rootdir/emulatorcores/libretro-prboom/prboom.wad $romdir/ports/doom
 
     # download and install Doom 1 shareware
     if `wget "http://downloads.petrockblock.com/retropiearchives/doom1.wad"`; then
@@ -47,5 +47,5 @@ $rootdir/supplementary/runcommand/runcommand.sh 1 "$rootdir/emulators/RetroArch/
 _EOF_
     chmod +x "$romdir/ports/Doom 1 Shareware.sh"
 
-    setESSystem 'Ports' 'ports' '~/RetroPie/roms/ports' '.sh .SH' '%ROM%' 'pc' 'ports'    
+    setESSystem 'Ports' 'ports' '~/RetroPie/roms/ports' '.sh .SH' '%ROM%' 'pc' 'ports'
 }

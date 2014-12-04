@@ -3,7 +3,7 @@ rp_module_desc="Cave Story LibretroCore"
 rp_module_menus="2+"
 
 function sources_cavestory() {
-    gitPullOrClone "$rootdir/emulatorcores/nxengine-libretro" git://github.com/libretro/nxengine-libretro.git
+    gitPullOrClone "$rootdir/emulatorcores/nxengine-libretro" https://github.com/libretro/nxengine-libretro.git
 }
 
 function build_cavestory() {

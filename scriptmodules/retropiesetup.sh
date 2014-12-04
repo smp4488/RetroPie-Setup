@@ -113,7 +113,7 @@ function rps_main_updatescript()
   printMsg "Fetching latest version of the RetroPie Setup Script."
   pushd $scriptdir
   if [[ ! -d ".git" ]]; then
-    dialog --backtitle "$__backtitle" --msgbox "Cannot find direcotry '.git'. Please clone the RetroPie Setup script via 'git clone git://github.com/petrockblog/RetroPie-Setup.git'" 20 60
+    dialog --backtitle "$__backtitle" --msgbox "Cannot find direcotry '.git'. Please clone the RetroPie Setup script via 'git clone https://github.com/petrockblog/RetroPie-Setup.git'" 20 60
     popd
     return
   fi

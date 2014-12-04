@@ -3,7 +3,7 @@ rp_module_desc="MAME LibretroCore"
 rp_module_menus="2+"
 
 function sources_mamelibretro() {
-    gitPullOrClone "$rootdir/emulatorcores/imame4all-libretro" git://github.com/libretro/imame4all-libretro.git
+    gitPullOrClone "$rootdir/emulatorcores/imame4all-libretro" https://github.com/libretro/imame4all-libretro.git
 }
 
 function build_mamelibretro() {
